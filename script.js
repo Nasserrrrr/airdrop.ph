@@ -1,28 +1,8 @@
-// Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('.header');
-            header.classList.toggle('sticky', window.scrollY > 100);
-        });
-
-        // Mobile menu toggle
-        document.getElementById('menu-icon').addEventListener('click', function() {
-            document.querySelector('.nav-icons').classList.toggle('active');
-            this.classList.toggle('fa-times');
-        });
-
-        // Close mobile menu when clicking a nav item
-        document.querySelectorAll('.nav-icon').forEach(icon => {
-            icon.addEventListener('click', () => {
-                document.querySelector('.nav-icons').classList.remove('active');
-                document.getElementById('menu-icon').classList.remove('fa-times');
-            });
-        });
-
-        // Show More Airdrops functionality
-        document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
             const showMoreBtn = document.querySelector('.show-more-btn');
             const backToTopBtn = document.querySelector('.back-to-top');
             const airdropBoxes = document.querySelectorAll('.airdrops-box');
+            const buttonContainer = document.querySelector('.button-container');
             
             let visibleCount = 12;
             const increment = 12;
@@ -32,6 +12,7 @@
                 if (index < visibleCount) box.classList.add('visible');
             });
 
+            // Show More functionality
             showMoreBtn.addEventListener('click', function() {
                 const nextBoxes = Array.from(airdropBoxes).slice(visibleCount, visibleCount + increment);
                 
